@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ — Clínica Odontológica Sorriso Perfeito</title>
+  <style>
+    :root{
+      --primary: #a0003a;
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(10,10,10,0.06);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+      color:#0f172a;
+      padding:40px 20px;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:900px;
+    }
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-bottom:20px;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:14px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;box-shadow:var(--shadow)
+    }
+    h1{margin:0;font-size:24px;color:var(--primary)}
+    p.lead{margin:4px 0 0;color:var(--muted)}
+
+    .faq{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      margin-bottom:14px;
+      border:1px solid rgba(0,0,0,0.05);
+    }
+
+    .faq h3{
+      font-size:18px;
+      margin:0;
+      color:var(--primary);
+      cursor:pointer;
+    }
+
+    .faq p{
+      display:none;
+      margin-top:8px;
+      color:#333;
+      line-height:1.6;
+    }
+
+    .faq.open p{
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">SP</div>
+      <div>
+        <h1>Clínica Unidonto</h1>
+        <p class="lead">Perguntas Frequentes (FAQ)</p>
+      </div>
+    </header>
+
+    <div class="faq">
+      <h3>Quais serviços odontológicos vocês oferecem?</h3>
+      <p>Realizamos limpeza, restaurações, extrações, clareamento dental, ortodontia (aparelhos), próteses e implantes dentários. Também oferecemos atendimento de urgência.</p>
+    </div>
+
+    <div class="faq">
+      <h3>É necessário agendar uma consulta com antecedência?</h3>
+      <p>Sim. Recomendamos agendar com pelo menos alguns dias de antecedência para garantir o melhor horário. No entanto, também atendemos casos de emergência.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Vocês atendem convênios odontológicos?</h3>
+      <p>Sim, trabalhamos com os principais convênios odontológicos. Consulte nossa recepção para verificar se o seu plano é aceito.</p>
+    </div>
+
+    <div class="faq">
+      <h3>O clareamento dental é seguro?</h3>
+      <p>Sim. Quando feito por um profissional qualificado, o clareamento é seguro e eficaz. Avaliamos cada caso para indicar o método mais adequado ao paciente.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Vocês fazem atendimento infantil?</h3>
+      <p>Sim. Temos dentistas especializados em odontopediatria para cuidar da saúde bucal das crianças de forma lúdica e tranquila.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Qual o horário de funcionamento da clínica?</h3>
+      <p>Atendemos de segunda a sexta-feira, das 8h às 18h, e aos sábados das 8h às 13h.</p>
+    </div>
+  </div>
+
+  <script>
+    const faqs = document.querySelectorAll('.faq h3');
+    faqs.forEach(faq => {
+      faq.addEventListener('click', () => {
+        faq.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
