@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Consulta - Uniodonto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #a0003a;
+      color: white;
+      text-align: center;
+      padding: 1.5em 0;
+    }
+
+    header img {
+  position: absolute; 
+  left: 20px;        
+  height: 50px;       
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color:  #a0003a;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      background-color: #a0003a;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #00357a;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #004aad;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="unidonto.png.png" alt="Logo Uniodonto">
+    <h1>Agende sua Consulta</h1>
+  </header>
+
+  <div class="container">
+    <h2>Preencha seus dados</h2>
+    <form id="form-agendar">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
+
+      <label for="especialidade">Especialidade desejada:</label>
+      <select id="especialidade" name="especialidade" required>
+        <option value="">Selecione...</option>
+        <option>Limpeza e prevenção</option>
+        <option>Restauração dentária</option>
+        <option>Ortodontia</option>
+        <option>Periodontia</option>
+        <option>Implantes</option>
+      </select>
+
+      <label for="data">Data preferencial:</label>
+      <input type="date" id="data" name="data" required>
+
+      <label for="mensagem">Observações:</label>
+      <textarea id="mensagem" name="mensagem" placeholder="Descreva o motivo da consulta ou observações adicionais"></textarea>
+
+      <button type="submit">Confirmar Agendamento</button>
+    </form>
+
+    <p class="success-message" id="msg-sucesso">✅ Consulta agendada com sucesso!</p>
+
+    <div class="back-link">
+      <a href="index.html">← Voltar para a página inicial</a>
+    </div>
+  </div>
+
+  <script>
+    
+    document.getElementById("form-agendar").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("msg-sucesso").style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
